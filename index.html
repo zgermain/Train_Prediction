@@ -5,9 +5,79 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Train Predictions.</title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body>
-    These are the predictions of trains.
-    
+    <div class = "container">
+
+        <div class = "jumbotron">
+            <h1>Train Predictions.</h1>
+            <h2>predictions of trains.</h2>
+            <h4>....................................................................................................................trains.</h4>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                Current Train Schedule
+            </div>
+            <div class="card-body">
+                <table class = "table" id = "train-schedule-table">
+                    <thead>
+                        <tr>
+                            <th scope = "col">Train Name</th>
+                            <th scope = "col">Destination</th>
+                            <th scope = "col">Frequency (min)</th>
+                            <th scope = "col">Next Arrival</th>
+                            <th scope = "col">Minutes Away</th>
+                        </tr>
+                    </thead>
+                    <tbody id = "table-body">
+
+                    </tbody>
+
+                </table>
+            </div>
+        </div>  
+
+        <div class = "card" id = "add-train">
+
+            <div class = "card-header">
+                Add Train
+            </div>
+            <div class = "card-body">
+                
+
+                <form role="form" id = "add-train-form">
+                    <div class="form-group row">
+                        <label for="name-input">Train Name:</label>
+                        <input class="form-control" id="name-input" type="text">
+                    </div>
+                    <div class="form-group row">
+                        <label for="email-input">Destination:</label>
+                        <input class="form-control" id="destination-input" type="text">
+                    </div>
+                    <div class="form-group row">
+                        <label for="age-input">First Train Time (HH:mm - military time):</label>
+                        <input class="form-control" id="time-input" type="date">
+                    </div>
+                    <div class="form-group row">
+                        <label for="age-input">Frequency:</label>
+                        <input class="form-control" id="frequency-input" type="number">
+                    </div>
+
+                    <button class="btn btn-default" id="add-user" type="submit">Submit</button>
+                </form>
+
+            </div>
+        </div>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
+    <script src= "https://cdnjs.cloudflare.com/ajax/libs/accounting.js/0.4.1/accounting.js "></script>
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.js"></script>
+    <script src="assets/js/trainPredict.js"></script>
 </body>
 </html>
