@@ -1,9 +1,25 @@
-h4{ 
-    font-size: 10px;
+body{
+    background-color:lightgray
+}
+
+.display-3{ 
+    font-size: 12px;
 }
 
 .jumbotron{
     text-align: center;
+    background-color: rgb(66, 66, 66);
+    color: lightgray;    
+}
+
+.card{
+    background-color: rgb(245, 245, 245);
+    color: rgb(66, 66, 66);
+}
+
+.card-header{
+    background-color: darkgrey;
+    color: rgb(245, 245, 245);
 }
 
 #add-train-card{

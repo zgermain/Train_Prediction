@@ -16,8 +16,7 @@ $(document).ready(function(){
 
   var database = firebase.database();
 
-  console.log(database);
-
+  // console.log(database);
 
   //Add Train Form Submit Click Event
   $("#add-train-button").on("click",function(event){
@@ -30,10 +29,10 @@ $(document).ready(function(){
     var frequency = $("#frequency-input").val();
 
     if (name && destination && trainTime && frequency){
-      console.log("name: " + name);
-      console.log("destination: " + destination);
-      console.log("trainTime: " + trainTime);
-      console.log("frequency: " + frequency);
+      // console.log("name: " + name);
+      // console.log("destination: " + destination);
+      // console.log("trainTime: " + trainTime);
+      // console.log("frequency: " + frequency);
   
       database.ref().push({
           name,
@@ -66,8 +65,8 @@ $(document).ready(function(){
     // var currentTime = moment("14:35", "HH:mm");
     var firstTrainTime = moment(firstTrainTime, "HH:mm");
 
-    console.log(currentTime.format("HH:mm"));
-    console.log(firstTrainTime.format("HH:mm"));
+    // console.log(currentTime.format("HH:mm"));
+    // console.log(firstTrainTime.format("HH:mm"));
 
     
 
@@ -80,7 +79,7 @@ $(document).ready(function(){
     // console.log("snapshot destination: " + destination);
     // console.log("snapshot trainTime: " + trainTime);
     // console.log("snapshot frequency: " + frequency);
-    console.log(nextArrival.format("HH:mm"))
+    // console.log(nextArrival.format("HH:mm"))
 
     newRow = $("<tr>")
     newRow.append($("<td>").html(name))
