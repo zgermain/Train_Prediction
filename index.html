@@ -42,7 +42,7 @@
             </div>
         </div>  
 
-        <div class = "card" id = "add-train">
+        <div class = "card" id = "add-train-card">
 
             <div class = "card-header">
                 Add Train
@@ -56,19 +56,19 @@
                         <input class="form-control" id="name-input" type="text">
                     </div>
                     <div class="form-group row">
-                        <label for="email-input">Destination:</label>
+                        <label for="destination-input">Destination:</label>
                         <input class="form-control" id="destination-input" type="text">
                     </div>
                     <div class="form-group row">
-                        <label for="age-input">First Train Time (HH:mm - military time):</label>
-                        <input class="form-control" id="time-input" type="date">
+                        <label for="time-input">First Train Time (HH:mm - military time):</label>
+                        <input class="form-control" id="time-input" type="time">
                     </div>
                     <div class="form-group row">
-                        <label for="age-input">Frequency:</label>
+                        <label for="frequency-input">Frequency (min):</label>
                         <input class="form-control" id="frequency-input" type="number">
                     </div>
 
-                    <button class="btn btn-default" id="add-user" type="submit">Submit</button>
+                    <button class="btn btn-default" id="add-train-button" type="submit">Submit</button>
                 </form>
 
             </div>
@@ -76,7 +76,6 @@
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
-    <script src= "https://cdnjs.cloudflare.com/ajax/libs/accounting.js/0.4.1/accounting.js "></script>
     <script src = "https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.js"></script>
     <script src="assets/js/trainPredict.js"></script>
 </body>
