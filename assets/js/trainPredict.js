@@ -51,13 +51,40 @@ $(document).ready(function(){
 
     var name = snapshot.val().name;
     var destination = snapshot.val().destination;
-    var trainTime = snapshot.val().trainTime;
+    var firstTrainTime = snapshot.val().trainTime;
     var frequency = snapshot.val().frequency;
 
-    console.log("snapshot name: " + name);
-    console.log("snapshot destination: " + destination);
-    console.log("snapshot trainTime: " + trainTime);
-    console.log("snapshot frequency: " + frequency);
+
+    var currentTime = moment();
+    // var currentTime = moment("14:35", "HH:mm");
+    var firstTrainTime = moment(firstTrainTime, "HH:mm");
+
+    console.log(currentTime.format("HH:mm"));
+    console.log(firstTrainTime.format("HH:mm"));
+
+    
+
+    var minutesAway = frequency - currentTime.diff(firstTrainTime, "minutes") % frequency;
+
+    var nextArrival = currentTime.add(minutesAway, "m");
+    // var nextArrival = moment(firstTrainTime, "HH:mm").add(frequency,"m");
+    
+    // console.log("snapshot name: " + name);
+    // console.log("snapshot destination: " + destination);
+    // console.log("snapshot trainTime: " + trainTime);
+    // console.log("snapshot frequency: " + frequency);
+    console.log(nextArrival.format("HH:mm"))
+
+    newRow = $("<tr>")
+    newRow.append($("<td>").html(name))
+          .append($("<td>").html(destination))
+          .append($("<td>").html(frequency))
+          .append($("<td>").html(nextArrival.format("hh:mm A")))
+          .append($("<td>").html(minutesAway))
+
+    $("#table-body").append(newRow);
+
+
   })
 
 
