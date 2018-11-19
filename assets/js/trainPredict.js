@@ -29,20 +29,27 @@ $(document).ready(function(){
     var trainTime = $("#time-input").val();
     var frequency = $("#frequency-input").val();
 
-    console.log("name: " + name);
-    console.log("destination: " + destination);
-    console.log("trainTime: " + trainTime);
-    console.log("frequency: " + frequency);
-
-    database.ref().push({
-        name,
-        destination,
-        trainTime,
-        frequency,
-        dateAdded: firebase.database.ServerValue.TIMESTAMP,
-    })
-
-    $('#add-train-form')[0].reset();
+    if (name && destination && trainTime && frequency){
+      console.log("name: " + name);
+      console.log("destination: " + destination);
+      console.log("trainTime: " + trainTime);
+      console.log("frequency: " + frequency);
+  
+      database.ref().push({
+          name,
+          destination,
+          trainTime,
+          frequency,
+          dateAdded: firebase.database.ServerValue.TIMESTAMP,
+      })
+  
+      $('#add-train-form')[0].reset();
+      $("#incorrect-text").html("")
+    } else {
+     
+      $("#incorrect-text").html("Look...you really gotta fill out <i>all the forms</i> up there, or this doesn't really work does it?");
+;
+    }
 
   })
 
@@ -83,7 +90,6 @@ $(document).ready(function(){
           .append($("<td>").html(minutesAway))
 
     $("#table-body").append(newRow);
-
 
   })
 

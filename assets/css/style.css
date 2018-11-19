@@ -9,3 +9,11 @@ h4{
 #add-train-card{
     margin-top: 20px;
 }
+
+#add-train-button, #incorrect-text{
+    float: left;
+}
+
+#incorrect-text{
+    margin-left:20px;
+}
